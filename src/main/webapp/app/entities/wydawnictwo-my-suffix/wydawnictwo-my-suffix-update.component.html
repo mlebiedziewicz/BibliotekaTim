@@ -1,0 +1,59 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-wydawnictwo-my-suffix-heading" jhiTranslate="bibliotekaTimApp.wydawnictwo.home.createOrEditLabel">Create or edit a Wydawnictwo</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!wydawnictwo.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="wydawnictwo.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bibliotekaTimApp.wydawnictwo.nazwa" for="field_nazwa">Nazwa</label>
+                    <input type="text" class="form-control" name="nazwa" id="field_nazwa"
+                        [(ngModel)]="wydawnictwo.nazwa" required maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.nazwa?.dirty && editForm.controls.nazwa?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.nazwa?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.nazwa?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bibliotekaTimApp.wydawnictwo.adres" for="field_adres">Adres</label>
+                    <input type="text" class="form-control" name="adres" id="field_adres"
+                        [(ngModel)]="wydawnictwo.adres" required maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.adres?.dirty && editForm.controls.adres?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.adres?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.adres?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bibliotekaTimApp.wydawnictwo.email" for="field_email">Email</label>
+                    <input type="text" class="form-control" name="email" id="field_email"
+                        [(ngModel)]="wydawnictwo.email" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+{
+    "bibliotekaTimApp": {
+        "gatunek": {
+            "home": {
+                "title": "Gatuneks",
+                "createLabel": "Create a new Gatunek",
+                "createOrEditLabel": "Create or edit a Gatunek",
+                "search": "Search for Gatunek"
+            },
+            "created": "A new Gatunek is created with identifier {{ param }}",
+            "updated": "A Gatunek is updated with identifier {{ param }}",
+            "deleted": "A Gatunek is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Gatunek {{ id }}?"
+            },
+            "detail": {
+                "title": "Gatunek"
+            },
+            "nazwa": "Nazwa"
+        }
+    }
+}

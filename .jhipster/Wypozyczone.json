@@ -1,0 +1,46 @@
+{
+    "name": "Wypozyczone",
+    "fields": [
+        {
+            "fieldName": "datawypozyczenia",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "dataoddania",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "relationshipValidateRules": "required",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "uzytkownik",
+            "otherEntityName": "user",
+            "otherEntityField": "login",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "relationshipValidateRules": "required",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "ksiazka",
+            "otherEntityName": "ksiazka",
+            "otherEntityField": "tytul",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20181127190603",
+    "entityTableName": "wypozyczone",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}

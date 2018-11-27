@@ -1,0 +1,88 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-ksiazka-my-suffix-heading" jhiTranslate="bibliotekaTimApp.ksiazka.home.createOrEditLabel">Create or edit a Ksiazka</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!ksiazka.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="ksiazka.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bibliotekaTimApp.ksiazka.tytul" for="field_tytul">Tytul</label>
+                    <input type="text" class="form-control" name="tytul" id="field_tytul"
+                        [(ngModel)]="ksiazka.tytul" required maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.tytul?.dirty && editForm.controls.tytul?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.tytul?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.tytul?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bibliotekaTimApp.ksiazka.tematyka" for="field_tematyka">Tematyka</label>
+                    <input type="text" class="form-control" name="tematyka" id="field_tematyka"
+                        [(ngModel)]="ksiazka.tematyka" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bibliotekaTimApp.ksiazka.opis" for="field_opis">Opis</label>
+                    <textarea class="form-control" name="opis" id="field_opis"
+                        [(ngModel)]="ksiazka.opis" ></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bibliotekaTimApp.ksiazka.autor" for="field_autor">Autor</label>
+                    <select class="form-control" id="field_autor" name="autor" [(ngModel)]="ksiazka.autorId"  required>
+                        <option *ngIf="!editForm.value.autor" [ngValue]="null" selected></option>
+                        <option [ngValue]="autorOption.id" *ngFor="let autorOption of autors; trackBy: trackAutorById">{{autorOption.imienazwisko}}</option>
+                    </select>
+                </div>
+                <div [hidden]="!(editForm.controls.autor?.dirty && editForm.controls.autor?.invalid)">
+                    <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.autor?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bibliotekaTimApp.ksiazka.wydawnictwo" for="field_wydawnictwo">Wydawnictwo</label>
+                    <select class="form-control" id="field_wydawnictwo" name="wydawnictwo" [(ngModel)]="ksiazka.wydawnictwoId"  required>
+                        <option *ngIf="!editForm.value.wydawnictwo" [ngValue]="null" selected></option>
+                        <option [ngValue]="wydawnictwoOption.id" *ngFor="let wydawnictwoOption of wydawnictwos; trackBy: trackWydawnictwoById">{{wydawnictwoOption.nazwa}}</option>
+                    </select>
+                </div>
+                <div [hidden]="!(editForm.controls.wydawnictwo?.dirty && editForm.controls.wydawnictwo?.invalid)">
+                    <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.wydawnictwo?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bibliotekaTimApp.ksiazka.gatunek" for="field_gatunek">Gatunek</label>
+                    <select class="form-control" id="field_gatunek" name="gatunek" [(ngModel)]="ksiazka.gatunekId"  required>
+                        <option *ngIf="!editForm.value.gatunek" [ngValue]="null" selected></option>
+                        <option [ngValue]="gatunekOption.id" *ngFor="let gatunekOption of gatuneks; trackBy: trackGatunekById">{{gatunekOption.nazwa}}</option>
+                    </select>
+                </div>
+                <div [hidden]="!(editForm.controls.gatunek?.dirty && editForm.controls.gatunek?.invalid)">
+                    <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.gatunek?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

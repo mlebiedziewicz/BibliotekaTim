@@ -1,0 +1,25 @@
+{
+    "bibliotekaTimApp": {
+        "wypozyczone": {
+            "home": {
+                "title": "Wypozyczones",
+                "createLabel": "Create a new Wypozyczone",
+                "createOrEditLabel": "Create or edit a Wypozyczone",
+                "search": "Search for Wypozyczone"
+            },
+            "created": "A new Wypozyczone is created with identifier {{ param }}",
+            "updated": "A Wypozyczone is updated with identifier {{ param }}",
+            "deleted": "A Wypozyczone is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Wypozyczone {{ id }}?"
+            },
+            "detail": {
+                "title": "Wypozyczone"
+            },
+            "datawypozyczenia": "Datawypozyczenia",
+            "dataoddania": "Dataoddania",
+            "uzytkownik": "Uzytkownik",
+            "ksiazka": "Ksiazka"
+        }
+    }
+}

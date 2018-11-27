@@ -1,0 +1,25 @@
+{
+    "name": "Gatunek",
+    "fields": [
+        {
+            "fieldName": "nazwa",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 50
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20181127190601",
+    "entityTableName": "gatunek",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}

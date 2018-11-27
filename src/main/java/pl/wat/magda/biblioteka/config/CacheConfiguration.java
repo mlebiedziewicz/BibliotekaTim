@@ -38,6 +38,13 @@ public class CacheConfiguration {
             cm.createCache(pl.wat.magda.biblioteka.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(pl.wat.magda.biblioteka.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(pl.wat.magda.biblioteka.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(pl.wat.magda.biblioteka.domain.Ksiazka.class.getName(), jcacheConfiguration);
+            cm.createCache(pl.wat.magda.biblioteka.domain.Autor.class.getName(), jcacheConfiguration);
+            cm.createCache(pl.wat.magda.biblioteka.domain.Gatunek.class.getName(), jcacheConfiguration);
+            cm.createCache(pl.wat.magda.biblioteka.domain.Wydawnictwo.class.getName(), jcacheConfiguration);
+            cm.createCache(pl.wat.magda.biblioteka.domain.Wypozyczone.class.getName(), jcacheConfiguration);
+            cm.createCache(pl.wat.magda.biblioteka.domain.Wypozyczone.class.getName() + ".uzytkowniks", jcacheConfiguration);
+            cm.createCache(pl.wat.magda.biblioteka.domain.Wypozyczone.class.getName() + ".ksiazkas", jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

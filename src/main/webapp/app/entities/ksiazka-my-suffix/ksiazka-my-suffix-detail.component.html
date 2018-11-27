@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="ksiazka">
+            <h2><span jhiTranslate="bibliotekaTimApp.ksiazka.detail.title">Ksiazka</span> {{ksiazka.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="bibliotekaTimApp.ksiazka.tytul">Tytul</span></dt>
+                <dd>
+                    <span>{{ksiazka.tytul}}</span>
+                </dd>
+                <dt><span jhiTranslate="bibliotekaTimApp.ksiazka.tematyka">Tematyka</span></dt>
+                <dd>
+                    <span>{{ksiazka.tematyka}}</span>
+                </dd>
+                <dt><span jhiTranslate="bibliotekaTimApp.ksiazka.opis">Opis</span></dt>
+                <dd>
+                    <span>{{ksiazka.opis}}</span>
+                </dd>
+                <dt><span jhiTranslate="bibliotekaTimApp.ksiazka.autor">Autor</span></dt>
+                <dd>
+                    <div *ngIf="ksiazka.autorId">
+                        <a [routerLink]="['/autor-my-suffix', ksiazka.autorId, 'view']">{{ksiazka.autorImienazwisko}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="bibliotekaTimApp.ksiazka.wydawnictwo">Wydawnictwo</span></dt>
+                <dd>
+                    <div *ngIf="ksiazka.wydawnictwoId">
+                        <a [routerLink]="['/wydawnictwo-my-suffix', ksiazka.wydawnictwoId, 'view']">{{ksiazka.wydawnictwoNazwa}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="bibliotekaTimApp.ksiazka.gatunek">Gatunek</span></dt>
+                <dd>
+                    <div *ngIf="ksiazka.gatunekId">
+                        <a [routerLink]="['/gatunek-my-suffix', ksiazka.gatunekId, 'view']">{{ksiazka.gatunekNazwa}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/ksiazka-my-suffix', ksiazka.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+{
+    "name": "Ksiazka",
+    "fields": [
+        {
+            "fieldName": "tytul",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "tematyka",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "opis",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "autor",
+            "otherEntityName": "autor",
+            "otherEntityField": "imienazwisko"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "wydawnictwo",
+            "otherEntityName": "wydawnictwo",
+            "otherEntityField": "nazwa"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "gatunek",
+            "otherEntityName": "gatunek",
+            "otherEntityField": "nazwa"
+        }
+    ],
+    "changelogDate": "20181127190559",
+    "entityTableName": "ksiazka",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}

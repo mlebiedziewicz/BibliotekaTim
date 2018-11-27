@@ -1,0 +1,45 @@
+entity Ksiazka{
+	tytul String required maxlength(50)
+	tematyka String
+	opis TextBlob
+}
+
+entity Autor{
+	imienazwisko String required maxlength(50)
+}
+
+entity Gatunek{
+	nazwa String required maxlength(50)
+}
+
+entity Wydawnictwo{
+	nazwa String required maxlength(50)
+    adres String required maxlength(50)
+    email String
+}
+
+entity Wypozyczone{
+	datawypozyczenia LocalDate required
+    dataoddania LocalDate
+}
+
+relationship ManyToOne{
+	Ksiazka{autor(imienazwisko) required} to Autor
+    Ksiazka{wydawnictwo(nazwa) required} to Wydawnictwo
+    Ksiazka{gatunek(nazwa) required} to Gatunek
+}
+
+relationship ManyToMany{
+	Wypozyczone{uzytkownik(login) required} to User
+    Wypozyczone{ksiazka(tytul) required} to Ksiazka
+}
+
+// Set pagination options
+paginate Autor, Ksiazka, Wydawnictwo, Gatunek, Wypozyczone with pagination
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+// Set an angular suffix
+angularSuffix * with mySuffix

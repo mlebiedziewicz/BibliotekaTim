@@ -1,0 +1,24 @@
+{
+    "bibliotekaTimApp": {
+        "wydawnictwo": {
+            "home": {
+                "title": "Wydawnictwo",
+                "createLabel": "Dodaj Wydawnictwo",
+                "createOrEditLabel": "Dodaj lub edytuj: Wydawnictwo",
+                "search": "Szukaj Wydawnictwo"
+            },
+            "created": "Utworzono nowy obiekt typu Wydawnictwo z identyfikatorem {{ param }}",
+            "updated": "Uaktualniono obiekt typu Wydawnictwo z identyfikatorem {{ param }}",
+            "deleted": "Usunięto obiekt typu Wydawnictwo z identyfikatorem {{ param }}",
+            "delete": {
+                "question": "Czy na pewno chcesz usunąć Wydawnictwo {{ id }}?"
+            },
+            "detail": {
+                "title": "Wydawnictwo"
+            },
+            "nazwa": "Nazwa",
+            "adres": "Adres",
+            "email": "Email"
+        }
+    }
+}
