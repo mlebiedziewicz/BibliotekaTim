@@ -1,0 +1,22 @@
+{
+    "bibliotekaTimApp": {
+        "gatunek": {
+            "home": {
+                "title": "Gatunek",
+                "createLabel": "Dodaj Gatunek",
+                "createOrEditLabel": "Dodaj lub edytuj: Gatunek",
+                "search": "Szukaj Gatunek"
+            },
+            "created": "Utworzono nowy obiekt typu Gatunek z identyfikatorem {{ param }}",
+            "updated": "Uaktualniono obiekt typu Gatunek z identyfikatorem {{ param }}",
+            "deleted": "Usunięto obiekt typu Gatunek z identyfikatorem {{ param }}",
+            "delete": {
+                "question": "Czy na pewno chcesz usunąć Gatunek {{ id }}?"
+            },
+            "detail": {
+                "title": "Gatunek"
+            },
+            "nazwa": "Nazwa"
+        }
+    }
+}

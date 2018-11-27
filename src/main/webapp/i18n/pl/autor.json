@@ -1,0 +1,22 @@
+{
+    "bibliotekaTimApp": {
+        "autor": {
+            "home": {
+                "title": "Autor",
+                "createLabel": "Dodaj Autor",
+                "createOrEditLabel": "Dodaj lub edytuj: Autor",
+                "search": "Szukaj Autor"
+            },
+            "created": "Utworzono nowy obiekt typu Autor z identyfikatorem {{ param }}",
+            "updated": "Uaktualniono obiekt typu Autor z identyfikatorem {{ param }}",
+            "deleted": "Usunięto obiekt typu Autor z identyfikatorem {{ param }}",
+            "delete": {
+                "question": "Czy na pewno chcesz usunąć Autor {{ id }}?"
+            },
+            "detail": {
+                "title": "Autor"
+            },
+            "imienazwisko": "Imienazwisko"
+        }
+    }
+}

@@ -8,6 +8,11 @@
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Encje",
+                "ksiazkaMySuffix": "Ksiazka",
+                "autorMySuffix": "Autor",
+                "gatunekMySuffix": "Gatunek",
+                "wydawnictwoMySuffix": "Wydawnictwo",
+                "wypozyczoneMySuffix": "Wypozyczone",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

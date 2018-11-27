@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="GETDATE()" dbms="mssql"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity Wypozyczone.
+    -->
+    <changeSet id="20181127190603-1" author="jhipster">
+        <createTable tableName="wypozyczone">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="datawypozyczenia" type="date">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="dataoddania" type="date">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        
+        <createTable tableName="wypozyczone_uzytkownik">
+            <column name="uzytkowniks_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="wypozyczones_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="wypozyczones_id, uzytkowniks_id" tableName="wypozyczone_uzytkownik"/>
+        
+        <createTable tableName="wypozyczone_ksiazka">
+            <column name="ksiazkas_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="wypozyczones_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="wypozyczones_id, ksiazkas_id" tableName="wypozyczone_ksiazka"/>
+        
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+</databaseChangeLog>

@@ -1,0 +1,27 @@
+{
+    "bibliotekaTimApp": {
+        "ksiazka": {
+            "home": {
+                "title": "Ksiazka",
+                "createLabel": "Dodaj Ksiazka",
+                "createOrEditLabel": "Dodaj lub edytuj: Ksiazka",
+                "search": "Szukaj Ksiazka"
+            },
+            "created": "Utworzono nowy obiekt typu Ksiazka z identyfikatorem {{ param }}",
+            "updated": "Uaktualniono obiekt typu Ksiazka z identyfikatorem {{ param }}",
+            "deleted": "Usunięto obiekt typu Ksiazka z identyfikatorem {{ param }}",
+            "delete": {
+                "question": "Czy na pewno chcesz usunąć Ksiazka {{ id }}?"
+            },
+            "detail": {
+                "title": "Ksiazka"
+            },
+            "tytul": "Tytul",
+            "tematyka": "Tematyka",
+            "opis": "Opis",
+            "autor": "Autor",
+            "wydawnictwo": "Wydawnictwo",
+            "gatunek": "Gatunek"
+        }
+    }
+}
