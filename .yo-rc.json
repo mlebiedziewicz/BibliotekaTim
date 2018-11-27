@@ -1,0 +1,40 @@
+{
+  "generator-jhipster": {
+    "applicationType": "monolith",
+    "gitCompany": "",
+    "baseName": "BibliotekaTim",
+    "packageName": "pl.wat.magda.biblioteka",
+    "packageFolder": "pl/wat/magda/biblioteka",
+    "serverPort": 8080,
+    "serviceDiscoveryType": false,
+    "authenticationType": "jwt",
+    "uaaBaseName": "../uaa",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mssql",
+    "searchEngine": "elasticsearch",
+    "enableSwaggerCodegen": false,
+    "messageBroker": false,
+    "buildTool": "gradle",
+    "useSass": false,
+    "clientPackageManager": "npm",
+    "testFrameworks": [],
+    "enableTranslation": true,
+    "nativeLanguage": "pl",
+    "languages": [
+      "en",
+      "pl"
+    ],
+    "clientFramework": "angularX",
+    "jhiPrefix": "jhi",
+    "jhipsterVersion": "5.7.0",
+    "jwtSecretKey": "ZWViYTA4MGM3ZDdhMjMyOTA5ZjdjOTNkY2JhZDgzYjA4NWQ4YmU5OWQ1MWJhYTkzNTAyMjAzMmJiNDI5Mzg2ODY0NGRhYmI0MWZkZjMwZDA2ZGI2NmE4OGJlNjZjM2E1YTRlOWVhMzBlODNiOTQ3NTNjOGRkYzI5MzM3MzljYTc=",
+    "otherModules": []
+  },
+  "git-provider": "GitHub",
+  "git-company": "mlebiedziewicz",
+  "repository-name": "BibliotekaTim"
+}
